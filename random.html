@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Java</title>
+	<style type="text/css">
+	#random{
+		border: 1px solid black;
+	}
+	
+
+
+	</style>
+</head>
+<body>
+	<h1>Test your reaction!</h1>
+	<h3>Click on the boxes as soon as possible!</h3>
+	<h5 id="time"></h5>
+	<div id="random"></div>
+
+<script>
+	var start = new Date().getTime();
+
+	var randomc="";
+	randomc='#' + Math.floor(Math.random()*16777215).toString(16);
+	var x=Math.floor(Math.random()*2);
+	var y=0;
+	document.getElementById("random").style.marginTop = Math.floor(Math.random()*500)+"px"  
+	document.getElementById("random").style.marginLeft = Math.floor(Math.random()*1500)+"px";
+	if(Math.floor(Math.random()*2)==1){
+		document.getElementById("random").style.borderRadius = "50%";
+		y=Math.floor(Math.random()*500);
+		document.getElementById("random").style.height =y+"px";
+	    document.getElementById("random").style.width =y+"px";
+	    document.getElementById("random").style.backgroundColor='#' + Math.floor(Math.random()*16777215).toString(16);
+	    x=Math.floor(Math.random()*2);
+
+	}
+	else{
+	document.getElementById("random").style.height =Math.floor(Math.random()*500)+"px";
+	document.getElementById("random").style.width =Math.floor(Math.random()*500)+"px";
+	document.getElementById("random").style.backgroundColor='#' + Math.floor(Math.random()*16777215).toString(16);
+	x=Math.floor(Math.random()*2);
+
+	}
+	document.getElementById("random").onclick=function () {
+		document.getElementById("random").style.marginTop = Math.floor(Math.random()*500)+"px"  
+	    document.getElementById("random").style.marginLeft = Math.floor(Math.random()*1500)+"px";
+		if(Math.floor(Math.random()*2)==0){
+			document.getElementById("random").style.borderRadius = "0%";
+	var elapsed = new Date().getTime() - start;
+	document.getElementById("time").innerHTML="Time taken is"+ " "+ elapsed/1000 +"seconds";
+	document.getElementById("random").style.height =Math.floor(Math.random()*500)+"px";
+	document.getElementById("random").style.width =Math.floor(Math.random()*500)+"px";
+	document.getElementById("random").style.backgroundColor='#' + Math.floor(Math.random()*16777215).toString(16);
+	start = new Date().getTime();
+	x=Math.floor(Math.random()*2);
+
+       }
+       else{
+       	var elapsed = new Date().getTime() - start;
+       	document.getElementById("time").innerHTML="Time taken is"+ " "+ elapsed/1000 +"seconds";
+       	document.getElementById("random").style.borderRadius = "50%";
+		y=Math.floor(Math.random()*500);
+		document.getElementById("random").style.height =y+"px";
+	    document.getElementById("random").style.width =y+"px";
+	    document.getElementById("random").style.backgroundColor='#' + Math.floor(Math.random()*16777215).toString(16);
+	    x=Math.floor(Math.random()*2);
+	    start = new Date().getTime();
+
+       }
+	}
+
+	
+
+
+  
+	
+
+
+
+</script>
+</body>
+</html>
